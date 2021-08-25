@@ -8,4 +8,45 @@
       SELECT SYSDATE FROM DUAL
     </select>
 
+    <select id="checkUserId" resultType="int" parameterType="String">
+        SELECT
+            COUNT(USER_ID)
+        FROM TB_USER
+        WHERE USER_ID = #{user_id}
+    </select>
+
+    <insert id="register" parameterType="com.jumpstd.mukpick.member.dto.MemberDto" >
+        INSERT INTO TB_USER (
+             USER_ID
+            ,PASSWORD
+            ,USER_NAME
+            ,PHONE
+            ,PROFILE_IMG
+            ,EMAIL
+            ,ROLE_TYPE
+            ,GENDER
+            ,AGE
+        )VALUES(
+             #{user_id}
+            ,#{password}
+            ,#{user_name}
+            ,#{phone}
+            ,#{profile_img}
+            ,#{email}
+            ,#{role_type}
+            ,#{gender}
+            ,#{age}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.jumpstd.mukpick.member.dto.MemberDto" >
+        UPDATE TB_USER
+        SET PASSWORD = #{password}
+            ,PHONE = #{phone}
+            ,PROFILE_IMG =#{profile_img}
+            ,EMAIL = #{email}
+            ,AGE = #{age}
+        WHERE USER_ID = #{user_id}
+    </update>
+
 </mapper>

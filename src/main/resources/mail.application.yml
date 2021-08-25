@@ -1,0 +1,12 @@
+spring:
+    mail:
+      host : smtp.gmail.com
+      port : 587
+      username : hyebin9612@gmail.com
+      password : cm6833cmcm@@
+      properties:
+        mail:
+          smtp:
+            auth : true
+            startls :
+              enable : true
