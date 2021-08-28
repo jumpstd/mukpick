@@ -9,7 +9,8 @@ import org.springframework.stereotype.Repository;
 public interface MemberMapper {
     public String getDate();
 
-    public int checkUserId(String user_id);
+    public int checkUserId(MemberDto memberDto);
     public int register(MemberDto memberDto);
     public int update(MemberDto memberDto);
+    public int passwordReset(MemberDto memberDto);
 }

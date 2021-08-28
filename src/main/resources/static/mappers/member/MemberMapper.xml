@@ -8,11 +8,14 @@
       SELECT SYSDATE FROM DUAL
     </select>
 
-    <select id="checkUserId" resultType="int" parameterType="String">
+    <select id="checkUserId" resultType="int" parameterType="jumpstd.mukpick.member.dto.MemberDto">
         SELECT
             COUNT(USER_ID)
         FROM TB_USER
         WHERE USER_ID = #{user_id}
+        <if test='email != "" || email != null '>
+            AND EMAIL = #{email}
+        </if>
     </select>
 
     <insert id="register" parameterType="com.jumpstd.mukpick.member.dto.MemberDto" >

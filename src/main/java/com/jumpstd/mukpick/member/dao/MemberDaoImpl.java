@@ -6,8 +6,8 @@ public class MemberDaoImpl implements MemberDao{
 
     private MemberMapper MemberMapper;
 
-    public int checkUserId(String user_id){
-        return MemberMapper.checkUserId(user_id);
+    public int checkUserId(MemberDto memberDto){
+        return MemberMapper.checkUserId(memberDto);
     }
 
     public int register(MemberDto memberDto){
@@ -15,5 +15,8 @@ public class MemberDaoImpl implements MemberDao{
     }
     public int update(MemberDto memberDto){
         return MemberMapper.update(memberDto);
+    }
+    public int passwordReset(MemberDto memberDto){
+        return MemberMapper.passwordReset(memberDto);
     }
 }
