@@ -44,15 +44,6 @@
     <delete id="deleteAll">
         DELETE FROM TB_SEARCH_MNT
     </delete>
-    <insert id="transferToFood" parameterType="String">
-        INSERT INTO TB_FOOD(
-            FOOD_NO
-            ,FOOD_NAME)
-            VALUES(
-              SEQ_FOOD_NO.NEXTVAL
-              ,#{foodName}
-              )
-    </insert>
     <update id="changeValidDate" parameterType="com.jumpstd.mukpick.admin.dto.SearchValidDateRequestDto">
         UPDATE TB_SEARCH_MNT
         SET VALID_DATE = #{changeDate}
