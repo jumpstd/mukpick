@@ -14,5 +14,4 @@ public class SearchRequestDto {
     private int start;
     private int end;
     private boolean asc;
-
 }

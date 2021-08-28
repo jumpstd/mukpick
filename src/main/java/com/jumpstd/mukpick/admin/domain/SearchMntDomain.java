@@ -1,5 +1,6 @@
 package com.jumpstd.mukpick.admin.domain;
 
+import com.jumpstd.mukpick.admin.dto.SearchResponseDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
@@ -16,4 +17,12 @@ public class SearchMntDomain {
     private Date registerDate;
     private Long searchCnt;
 
+    public SearchResponseDto getSearchMntDto(){
+        return new SearchResponseDto(
+                this.searchNo
+                , this.searchText
+                , this.validDate
+                , this.registerDate
+                , searchCnt);
+        }
 }
